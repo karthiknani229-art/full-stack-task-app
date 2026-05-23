@@ -1,66 +1,24 @@
-# Task Management System (Full Stack)
+# Full Stack Task Management App
 
-## 🚀 Overview
+A full-stack task management application built with React, Node.js, Express, and MongoDB. Features JWT authentication, task filtering, search, and analytics dashboard.
 
-A full-stack Task Management application built with Node.js, Express, MongoDB, and React.
-The application allows users to manage tasks efficiently with authentication, filtering, search, and analytics.
+## Tech Stack
 
----
+**Frontend:** React.js, Vite, Axios, React Router
 
-## ✨ Features
+**Backend:** Node.js, Express.js, MongoDB, Mongoose
 
-### 🔐 Authentication
+**Auth:** JWT
 
-* User registration & login
-* JWT-based authentication
-* Protected routes
+## Features
 
-### 📋 Task Management
+- User registration and login with JWT authentication
+- Create, update, delete, and toggle task status (todo / done)
+- Priority levels — low, medium, high
+- Filter tasks by status and search by title
+- Analytics dashboard — total, completed, pending tasks, and completion rate
 
-* Create, view, update, and delete tasks
-* Task status toggle (todo ↔ done)
-* Priority selection (low, medium, high)
-
-### 🔎 Filtering & Search
-
-* Filter tasks by status (All / Pending / Done)
-* Search tasks by title
-
-### 📊 Analytics
-
-* Total tasks
-* Completed tasks
-* Pending tasks
-* Completion rate
-
-### 🎨 UI
-
-* Clean and simple interface
-* Structured layout (dashboard + task list)
-
----
-
-## 🛠 Tech Stack
-
-**Frontend**
-
-* React (Vite)
-* Axios
-* React Router
-
-**Backend**
-
-* Node.js
-* Express.js
-* MongoDB (Mongoose)
-
-**Authentication**
-
-* JSON Web Tokens (JWT)
-
----
-
-## 📦 Project Structure
+## Project Structure
 
 ```
 full-stack-task-app/
@@ -81,27 +39,43 @@ full-stack-task-app/
 └── README.md
 ```
 
----
+## API Endpoints
 
-## ⚙️ Setup Instructions
+**Auth**
 
-### 1️⃣ Clone Repository
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register user |
+| POST | /api/auth/login | Login and get token |
 
-```
-git clone <your-repo-link>
+**Tasks**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/tasks | Get all tasks |
+| POST | /api/tasks | Create task |
+| PUT | /api/tasks/:id | Update task |
+| DELETE | /api/tasks/:id | Delete task |
+| GET | /api/tasks/stats | Get analytics |
+
+## Local Setup
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/karthiknani229-art/full-stack-task-app.git
 cd full-stack-task-app
 ```
 
----
+**2. Backend setup**
 
-### 2️⃣ Backend Setup
-
-```
+```bash
 cd backend
 npm install
+npm run dev
 ```
 
-Create `.env` file:
+Create a `.env` file inside `/backend`:
 
 ```
 PORT=5000
@@ -109,60 +83,16 @@ MONGO_URI=mongodb://127.0.0.1:27017/taskmanager
 JWT_SECRET=your_secret_key
 ```
 
-Run backend:
+**3. Frontend setup**
 
-```
-npm run dev
-```
-
----
-
-### 3️⃣ Frontend Setup
-
-```
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Open:
+App runs at: http://localhost:5173
 
-```
-http://localhost:5173
-```
+## Author
 
----
-
-## 📡 API Endpoints
-
-### Auth
-
-* POST /api/auth/register
-* POST /api/auth/login
-
-### Tasks
-
-* GET /api/tasks
-* POST /api/tasks
-* PUT /api/tasks/:id
-* DELETE /api/tasks/:id
-
-### Analytics
-
-* GET /api/tasks/stats
-
----
-
-## 💡 Key Design Decisions
-
-* JWT for stateless authentication
-* Middleware for route protection
-* MongoDB for flexible schema
-* Modular folder structure for scalability
-
----
-
-## 📌 Notes
-
-* The application runs fully locally.
-* Deployment can be done if required.
+Penta Karthik — [GitHub](https://github.com/karthiknani229-art)
